@@ -42,7 +42,14 @@ app.get("/decks", async (req: Request, res: Response) => {
 app.get("/hello", (req: Request, res: Response) => {
     res.send("hello world");
 });
+app.delete('/decks/:deckId',async (req: Request, res: Response) => {
+    const deckId = req.params.deckId;
+    const deck = await Deck.findByIdAndDelete(deckId);
 
+    res.json({
+        deck
+    });
+});
 // Connect to MongoDB and start the server
 mongoose.connect("mongodb+srv://flashcardsage:YCd3TXmDrIt7lQRe@cluster0.ko5cio7.mongodb.net/?retryWrites=true&w=majority").then(() => {
     console.log("Connected to MongoDB");

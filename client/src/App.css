@@ -16,6 +16,7 @@
   align-items: center;
 }
 .decks {
+  position:relative;
   display: grid;
   width: 600px;
   margin: 0 auto;
@@ -34,6 +35,13 @@
   border: 1px solid white;
   border-radius:10px;
 }
-.decks li:hover{
-  background: #eee;
+
+.decks li:button {
+  position: absolute;
+  width:10px;
+  height:10px;
+  font-size:10px;
+  top:0;
+  right:5px;
 }
+
